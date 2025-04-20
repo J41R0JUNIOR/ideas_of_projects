@@ -4,12 +4,4 @@ This repository is a place to store project ideas I plan to develop, as well as 
 
 ## 📌 Ongoing or Completed Projects
 
-### [MoneyManager](https://github.com/J41R0JUNIOR/MoneyManager)
-**Description:** A simple application to help manage personal finances, using Spring Boot as the backend foundation. The goal is to provide an intuitive and functional interface for financial control.  
-**Technologies:** Spring Boot, Maven.
-
-## 🧠 Future Project Ideas
-
-- [ ] **WebCrawlerBot**: A bot that navigates the web and automatically generates structured reports based on the collected data.
-- [ ] **InvestNewsSite**: A website that consumes investment-related news APIs and presents the information in a clean and accessible format.
-
+### [001-MoneyManager](https://github.com/J41R0JUNIOR/ideas_of_projects/blob/main/Projects/001-MoneyManager.md)
