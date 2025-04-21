@@ -1,4 +1,4 @@
-Template project ->  [MoneyManager](https://github.com/J41R0JUNIOR/MoneyManager)
+Template project ->  [MoneyManager-BackEnd](https://github.com/J41R0JUNIOR/MoneyManager-BackEnd) [MoneyManager-FrontEnd](https://github.com/J41R0JUNIOR/MoneyManager-FrontEnd)
 
 ### 🔧 Project Structure & Features
 
