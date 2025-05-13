@@ -1,67 +1,67 @@
-Template project ->  [BackEnd](https://github.com/J41R0JUNIOR/PicPay-Simplified) 
+Template project → [BackEnd](https://github.com/J41R0JUNIOR/PicPay-Simplified)
 
-# 💸 PicPay Simplificado
+# 💸 Simplified PicPay
 
-O **PicPay Simplificado** é uma plataforma de pagamentos simplificada, onde usuários podem depositar e transferir dinheiro entre si. A aplicação foi construída com foco em operações seguras, regras de negócio bem definidas e comunicação com serviços externos simulados.
-
----
-
-## 📌 Objetivo
-
-Permitir transferências de dinheiro entre usuários, com validações, autenticações e notificações apropriadas.
+**Simplified PicPay** is a simplified payment platform where users can deposit and transfer money between each other. The application was built with a focus on secure operations, well-defined business rules, and integration with simulated external services.
 
 ---
 
-## 🧑‍💼 Tipos de Usuário
+## 📌 Objective
 
-- **Usuário Comum**: Pode **enviar e receber** transferências.
-- **Lojista**: Pode **apenas receber** transferências.
-
----
-
-## 📝 Requisitos de Cadastro
-
-Todos os usuários devem possuir:
-
-- Nome Completo
-- CPF/CNPJ (único)
-- E-mail (único)
-- Senha
+Allow money transfers between users with appropriate validations, authentication, and notifications.
 
 ---
 
-## 🔁 Regras de Transferência
+## 🧑‍💼 User Types
 
-- **Usuários comuns** podem enviar dinheiro para outros usuários ou lojistas.
-- **Lojistas** **não** podem enviar dinheiro, apenas receber.
-- O sistema deve verificar se o **usuário pagador tem saldo suficiente** antes de realizar a transferência.
-- A operação de transferência **deve ser transacional**. Caso algo falhe, o dinheiro deve ser revertido para o pagador.
-- Antes de realizar a transferência, é necessário consultar um **serviço autorizador externo**:
+- **Common User**: Can **send and receive** transfers.
+- **Merchant**: Can **only receive** transfers.
+
+---
+
+## 📝 Registration Requirements
+
+All users must have:
+
+- Full Name  
+- CPF/CNPJ (must be unique)  
+- Email (must be unique)  
+- Password  
+
+---
+
+## 🔁 Transfer Rules
+
+- **Common users** can send money to other users or merchants.  
+- **Merchants** **cannot** send money, only receive.  
+- The system must check if the **payer has sufficient balance** before making the transfer.  
+- The transfer operation **must be transactional**. If something fails, the money must be refunded to the payer.  
+- Before completing the transfer, the system must consult an **external authorization service**:
 
 GET https://util.devi.tools/api/v2/authorize
 
 
-- Após a transferência, uma **notificação** deve ser enviada para o destinatário (usuário ou lojista) via serviço externo:
+- After the transfer, a **notification** must be sent to the recipient (user or merchant) via an external service:
 
 POST https://util.devi.tools/api/v1/notify
 
 
-> ⚠️ Este serviço pode estar indisponível ou instável.
+> ⚠️ This service may be unavailable or unstable.
 
 ---
 
-## 🔗 Endpoint de Transferência
+## 🔗 Transfer Endpoint
 
-Você pode utilizar o seguinte endpoint para realizar uma transferência:
+You can use the following endpoint to make a transfer:
 
 **POST** `/transfer`  
 **Content-Type**: `application/json`
 
-### ✅ Exemplo de Payload:
+### ✅ Example Payload:
 
 ```json
 {
-"value": 100.0,
-"payer": 4,
-"payee": 15
+  "value": 100.0,
+  "payer": 4,
+  "payee": 15
 }
