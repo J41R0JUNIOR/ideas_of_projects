@@ -1,25 +1,25 @@
-Template project → [BackEnd](https://github.com/J41R0JUNIOR/PicPay-Simplified)
+Template project -> [BackEnd](https://github.com/J41R0JUNIOR/PicPay-Simplified)
 
-# 💸 Simplified PicPay
+### 💸 Simplified PicPay
 
 **Simplified PicPay** is a simplified payment platform where users can deposit and transfer money between each other. The application was built with a focus on secure operations, well-defined business rules, and integration with simulated external services.
 
 ---
 
-## 📌 Objective
+### 📌 Objective
 
 Allow money transfers between users with appropriate validations, authentication, and notifications.
 
 ---
 
-## 🧑‍💼 User Types
+### 🧑‍💼 User Types
 
 - **Common User**: Can **send and receive** transfers.
 - **Merchant**: Can **only receive** transfers.
 
 ---
 
-## 📝 Registration Requirements
+### 📝 Registration Requirements
 
 All users must have:
 
@@ -30,7 +30,7 @@ All users must have:
 
 ---
 
-## 🔁 Transfer Rules
+### 🔁 Transfer Rules
 
 - **Common users** can send money to other users or merchants.  
 - **Merchants** **cannot** send money, only receive.  
@@ -46,11 +46,11 @@ GET https://util.devi.tools/api/v2/authorize
 POST https://util.devi.tools/api/v1/notify
 
 
-> ⚠️ This service may be unavailable or unstable.
+⚠️ This service may be unavailable or unstable.
 
 ---
 
-## 🔗 Transfer Endpoint
+### 🔗 Transfer Endpoint
 
 You can use the following endpoint to make a transfer:
 
