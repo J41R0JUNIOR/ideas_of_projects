@@ -1,0 +1,67 @@
+Template project ->  [BackEnd](https://github.com/J41R0JUNIOR/PicPay-Simplified) 
+
+# 💸 PicPay Simplificado
+
+O **PicPay Simplificado** é uma plataforma de pagamentos simplificada, onde usuários podem depositar e transferir dinheiro entre si. A aplicação foi construída com foco em operações seguras, regras de negócio bem definidas e comunicação com serviços externos simulados.
+
+---
+
+## 📌 Objetivo
+
+Permitir transferências de dinheiro entre usuários, com validações, autenticações e notificações apropriadas.
+
+---
+
+## 🧑‍💼 Tipos de Usuário
+
+- **Usuário Comum**: Pode **enviar e receber** transferências.
+- **Lojista**: Pode **apenas receber** transferências.
+
+---
+
+## 📝 Requisitos de Cadastro
+
+Todos os usuários devem possuir:
+
+- Nome Completo
+- CPF/CNPJ (único)
+- E-mail (único)
+- Senha
+
+---
+
+## 🔁 Regras de Transferência
+
+- **Usuários comuns** podem enviar dinheiro para outros usuários ou lojistas.
+- **Lojistas** **não** podem enviar dinheiro, apenas receber.
+- O sistema deve verificar se o **usuário pagador tem saldo suficiente** antes de realizar a transferência.
+- A operação de transferência **deve ser transacional**. Caso algo falhe, o dinheiro deve ser revertido para o pagador.
+- Antes de realizar a transferência, é necessário consultar um **serviço autorizador externo**:
+
+GET https://util.devi.tools/api/v2/authorize
+
+
+- Após a transferência, uma **notificação** deve ser enviada para o destinatário (usuário ou lojista) via serviço externo:
+
+POST https://util.devi.tools/api/v1/notify
+
+
+> ⚠️ Este serviço pode estar indisponível ou instável.
+
+---
+
+## 🔗 Endpoint de Transferência
+
+Você pode utilizar o seguinte endpoint para realizar uma transferência:
+
+**POST** `/transfer`  
+**Content-Type**: `application/json`
+
+### ✅ Exemplo de Payload:
+
+```json
+{
+"value": 100.0,
+"payer": 4,
+"payee": 15
+}
